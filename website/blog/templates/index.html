@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<br>
+
+	<h2>Blog Database</h2><br>
+
+	{% for items in all %}
+		<h5>{{ items.title }}</h5> <br/>
+		{{ items.content }}
+		<blockquote> ~ {{ items.author }}</blockquote>
+		<hr>
+	{% endfor %}
+	<a href="{% url 'post'%}"><button type="button" class="btn btn-secondary">Post</button></a>
+
+{% endblock %}
